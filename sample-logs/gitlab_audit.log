@@ -1,0 +1,2 @@
+{"time":"2025-11-30T20:01:00Z","EventName":"personal_access_token.created","user":"alice","target_id":123,"TokenScopes":["api","read_user","sudo"],"source_ip":"203.0.113.45"}
+{"time":"2025-11-30T20:03:00Z","EventName":"personal_access_token.created","user":"automation_bot","target_id":124,"TokenScopes":["read_repository"],"source_ip":"198.51.100.9"}
