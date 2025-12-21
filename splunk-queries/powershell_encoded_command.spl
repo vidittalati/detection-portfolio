@@ -1,0 +1,6 @@
+index=wineventlog EventCode=1 OR sourcetype=WinEventLog:Security
+| eval cmd=coalesce(CommandLine, Process_Command)
+| search cmd="*-EncodedCommand*" OR cmd="*-e *"
+| stats values(ParentImage) as parents, count by host, user, cmd, _time
+| where NOT (user IN ("svc_monitor","svc_orch"))  // allowlist service accounts
+| sort - count
