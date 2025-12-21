@@ -1,0 +1,27 @@
+title: GitLab PAT Created with Admin Scopes
+id: sigma-saas-gitlab-pat-001
+status: experimental
+description: Detect creation of personal access tokens granted admin-level scopes in GitLab audit logs.
+author: Vidit Talati
+date: 2025/12/01
+logsource:
+  product: gitlab
+  category: audit
+detection:
+  selection:
+    EventName: "personal_access_token.created"
+    TokenScopes|contains:
+      - "api"
+      - "read_user"
+      - "sudo"
+  condition: selection
+fields:
+  - user
+  - ip_address
+  - token_scopes
+falsepositives:
+  - Admins creating tokens for legitimate automation — correlate with requester role and immediate activity
+level: high
+tags:
+  - attack.persistence
+  - attack.credential_access
