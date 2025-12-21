@@ -1,0 +1,4 @@
+index=process sourcetype=linux:process
+| where match(CommandLine, "bash\\s+-i\\s+>&\\s+/dev/tcp/") OR match(CommandLine, "nc\\s+-e\\s+/bin/bash") OR match(CommandLine, "python\\s+-c.*socket")
+| stats count by host, user, CommandLine, _time
+| sort - count
