@@ -1,0 +1,19 @@
+title: Suspicious Reverse Shell Command
+id: sigma-linux-008
+status: experimental
+description: Detects common reverse-shell patterns executed on Linux hosts.
+author: Vidit Talati
+date: 2025/12/01
+logsource:
+  product: linux
+  category: process_creation
+detection:
+  selection:
+    CommandLine|re: 'bash\s+-i\s+>&\s+/dev/tcp/|nc\s+-e\s+/bin/bash|python\s+-c.*socket'
+  condition: selection
+falsepositives:
+  - Developers running debugging tools or netcat legitimately
+level: high
+tags:
+  - attack.command_and_control
+  - attack.t1071
