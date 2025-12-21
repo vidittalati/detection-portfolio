@@ -1,0 +1,7 @@
+index=gitlab_audit sourcetype=gitlab:audit EventName="personal_access_token.created"
+| eval scopes=TokenScopes
+| search scopes="api" OR scopes="sudo" OR scopes="read_user"
+| stats values(user) as users, values(source_ip) as ips, values(scopes) as scopes, count by target_id, _time
+| where count>=1
+| lookup user_allowlist user OUTPUT user as allowed_user
+| where isnull(allowed_user)
