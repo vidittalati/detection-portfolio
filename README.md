@@ -9,8 +9,6 @@ Threat Research → Sigma rule → Splunk translation → validation on sample l
 - `sample-logs/` — Small synthetic sample logs to validate detections locally.
 - `writeups/` — Short write-ups explaining attacker behaviour, detection rationale, false positives and tuning steps.
 
-If you'd like to run these locally, see `sigma_to_splunk.md` for a quick validation guide.
-
 ---
 
 ## TL;DR — Key Detections
