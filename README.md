@@ -5,10 +5,9 @@ Threat Research → Sigma rule → Splunk translation → validation on sample l
 
 **What's inside**
 - `sigma-rules/` — Sigma rules (YAML) for Linux reverse shell, PowerShell encoded command, GitLab PAT admin-scope detection.
-- `splunk/` — Splunk SPL equivalents for each Sigma rule and notes for tuning.
-- `logs/` — Small synthetic sample logs to validate detections locally.
+- `splunk-queries/` — Splunk SPL equivalents for each Sigma rule and notes for tuning.
+- `sample-logs/` — Small synthetic sample logs to validate detections locally.
 - `writeups/` — Short write-ups explaining attacker behaviour, detection rationale, false positives and tuning steps.
-- `docs/` — Diagrams (attack flow, detection flow) — add PNGs here for visual presentation.
 
 If you'd like to run these locally, see `sigma_to_splunk.md` for a quick validation guide.
 
