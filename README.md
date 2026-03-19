@@ -4,7 +4,7 @@ This repo hosts a small, focused portfolio of **behavioral detection** work and 
 Threat Research → Sigma rule → Splunk translation → validation on sample logs → false positive tuning.
 
 **What's inside**
-- `sigma/` — Sigma rules (YAML) for Linux reverse shell, PowerShell encoded command, GitLab PAT admin-scope detection.
+- `sigma-rules/` — Sigma rules (YAML) for Linux reverse shell, PowerShell encoded command, GitLab PAT admin-scope detection.
 - `splunk/` — Splunk SPL equivalents for each Sigma rule and notes for tuning.
 - `logs/` — Small synthetic sample logs to validate detections locally.
 - `writeups/` — Short write-ups explaining attacker behaviour, detection rationale, false positives and tuning steps.
